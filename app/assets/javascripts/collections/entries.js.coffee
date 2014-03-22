@@ -6,3 +6,7 @@ class Raffler.Collections.Entries extends Backbone.Collection
   # PUT /entries/123
   # DELETE /entries/123
   model: Raffler.Models.Entry
+
+  drawWinner: ->
+    winner = @shuffle()[0]
+    winner.win() if winner
